@@ -23,7 +23,7 @@ class MyAppState extends State<MyApp> with TickerProviderStateMixin {
 
   String get timerString {
     Duration duration = controller.duration * controller.value;
-    return '${duration.inMinutes}:${(duration.inSeconds % 60).toString().padLeft(2, '0')}';
+    return '${duration.inMinutes}:${(duration.inSeconds % 120).toString().padLeft(2, '0')}';
   }
 
   @override
@@ -31,7 +31,7 @@ class MyAppState extends State<MyApp> with TickerProviderStateMixin {
     super.initState();
     controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 60),
+      duration: Duration(seconds: 120),
     );
   }
 
